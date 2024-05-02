@@ -11,11 +11,11 @@
     <h1>本の編集を行う</h1>
     <form th:action="@{/book-edit}" th:object="${editBookForm}" method="POST">
       <input type="hidden" th:field="*{id}" th:value="*{id}">
-      <div class="mb-3">
-        <p th:if="${#fields.hassErrors('title')}" th:errors="*{title}" class="text-danger">Title Erorr</p>
-        <label for="bookTitle" class="form-label">タイトル</label>
-        <input id="bookTitle" class="form-control" type="text" th:field="*{title}">
-      </div>
+        <div class="mb-3">
+          <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="text-danger">Title Error</p>
+          <label for="bookTitle" class="form-label">タイトル</label>
+          <input id="bookTitle" class="form-control" type="text" th:field="*{title}">
+        </div>
       <div class="mb-3">
         <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="text-danger">Price Error</p>
         <label for="bookPrice" class="form-label">値段</label>
